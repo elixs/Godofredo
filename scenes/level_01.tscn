@@ -1,0 +1,139 @@
+[gd_scene load_steps=13 format=2]
+
+[ext_resource path="res://assets/Action Pack - CITY/Assets/Assets_City.png" type="Texture" id=1]
+[ext_resource path="res://scenes/carlitos.tscn" type="PackedScene" id=2]
+
+[sub_resource type="ConvexPolygonShape2D" id=2]
+points = PoolVector2Array( 0, 0, 16, 0, 16, 16, 0, 16 )
+
+[sub_resource type="ConvexPolygonShape2D" id=3]
+points = PoolVector2Array( 0, 0, 16, 0, 16, 16, 0, 16 )
+
+[sub_resource type="ConvexPolygonShape2D" id=4]
+points = PoolVector2Array( 0, 0, 16, 0, 16, 16, 0, 16 )
+
+[sub_resource type="ConvexPolygonShape2D" id=5]
+points = PoolVector2Array( 0, 0, 16, 0, 16, 16, 0, 16 )
+
+[sub_resource type="ConvexPolygonShape2D" id=6]
+points = PoolVector2Array( 0, 0, 16, 0, 16, 16, 0, 16 )
+
+[sub_resource type="ConvexPolygonShape2D" id=7]
+points = PoolVector2Array( 0, 0, 16, 0, 16, 16, 0, 16 )
+
+[sub_resource type="ConvexPolygonShape2D" id=8]
+points = PoolVector2Array( 0, 0, 16, 0, 16, 16, 0, 16 )
+
+[sub_resource type="ConvexPolygonShape2D" id=9]
+points = PoolVector2Array( 0, 0, 16, 0, 16, 16, 0, 16 )
+
+[sub_resource type="ConvexPolygonShape2D" id=10]
+points = PoolVector2Array( 0, 0, 16, 0, 16, 16, 0, 16 )
+
+[sub_resource type="TileSet" id=1]
+0/name = "Assets_City.png 0"
+0/texture = ExtResource( 1 )
+0/tex_offset = Vector2( 0, 0 )
+0/modulate = Color( 1, 1, 1, 1 )
+0/region = Rect2( 80, 32, 16, 16 )
+0/tile_mode = 0
+0/occluder_offset = Vector2( 0, 0 )
+0/navigation_offset = Vector2( 0, 0 )
+0/shape_offset = Vector2( 0, 0 )
+0/shape_transform = Transform2D( 1, 0, 0, 1, 0, 0 )
+0/shape_one_way = false
+0/shape_one_way_margin = 0.0
+0/shapes = [  ]
+0/z_index = 0
+1/name = "Assets_City.png 1"
+1/texture = ExtResource( 1 )
+1/tex_offset = Vector2( 0, 0 )
+1/modulate = Color( 1, 1, 1, 1 )
+1/region = Rect2( 0, 0, 48, 48 )
+1/tile_mode = 1
+1/autotile/bitmask_mode = 0
+1/autotile/bitmask_flags = [ Vector2( 0, 0 ), 256, Vector2( 0, 1 ), 260, Vector2( 0, 2 ), 4, Vector2( 1, 0 ), 320, Vector2( 1, 1 ), 325, Vector2( 1, 2 ), 5, Vector2( 2, 0 ), 64, Vector2( 2, 1 ), 65, Vector2( 2, 2 ), 1 ]
+1/autotile/icon_coordinate = Vector2( 1, 1 )
+1/autotile/tile_size = Vector2( 16, 16 )
+1/autotile/spacing = 0
+1/autotile/occluder_map = [  ]
+1/autotile/navpoly_map = [  ]
+1/autotile/priority_map = [  ]
+1/autotile/z_index_map = [  ]
+1/occluder_offset = Vector2( 0, 0 )
+1/navigation_offset = Vector2( 0, 0 )
+1/shape_offset = Vector2( 0, 0 )
+1/shape_transform = Transform2D( 1, 0, 0, 1, 0, 0 )
+1/shape = SubResource( 2 )
+1/shape_one_way = false
+1/shape_one_way_margin = 1.0
+1/shapes = [ {
+"autotile_coord": Vector2( 0, 0 ),
+"one_way": false,
+"one_way_margin": 1.0,
+"shape": SubResource( 2 ),
+"shape_transform": Transform2D( 1, 0, 0, 1, 0, 0 )
+}, {
+"autotile_coord": Vector2( 1, 0 ),
+"one_way": false,
+"one_way_margin": 1.0,
+"shape": SubResource( 3 ),
+"shape_transform": Transform2D( 1, 0, 0, 1, 0, 0 )
+}, {
+"autotile_coord": Vector2( 2, 0 ),
+"one_way": false,
+"one_way_margin": 1.0,
+"shape": SubResource( 4 ),
+"shape_transform": Transform2D( 1, 0, 0, 1, 0, 0 )
+}, {
+"autotile_coord": Vector2( 0, 1 ),
+"one_way": false,
+"one_way_margin": 1.0,
+"shape": SubResource( 5 ),
+"shape_transform": Transform2D( 1, 0, 0, 1, 0, 0 )
+}, {
+"autotile_coord": Vector2( 1, 1 ),
+"one_way": false,
+"one_way_margin": 1.0,
+"shape": SubResource( 6 ),
+"shape_transform": Transform2D( 1, 0, 0, 1, 0, 0 )
+}, {
+"autotile_coord": Vector2( 2, 1 ),
+"one_way": false,
+"one_way_margin": 1.0,
+"shape": SubResource( 7 ),
+"shape_transform": Transform2D( 1, 0, 0, 1, 0, 0 )
+}, {
+"autotile_coord": Vector2( 0, 2 ),
+"one_way": false,
+"one_way_margin": 1.0,
+"shape": SubResource( 8 ),
+"shape_transform": Transform2D( 1, 0, 0, 1, 0, 0 )
+}, {
+"autotile_coord": Vector2( 1, 2 ),
+"one_way": false,
+"one_way_margin": 1.0,
+"shape": SubResource( 9 ),
+"shape_transform": Transform2D( 1, 0, 0, 1, 0, 0 )
+}, {
+"autotile_coord": Vector2( 2, 2 ),
+"one_way": false,
+"one_way_margin": 1.0,
+"shape": SubResource( 10 ),
+"shape_transform": Transform2D( 1, 0, 0, 1, 0, 0 )
+} ]
+1/z_index = 0
+
+[node name="Level01" type="Node2D"]
+__meta__ = {
+"_edit_lock_": true
+}
+
+[node name="TileMap" type="TileMap" parent="."]
+tile_set = SubResource( 1 )
+cell_size = Vector2( 16, 16 )
+format = 1
+tile_data = PoolIntArray( -131037, 1, 0, -131036, 1, 2, -65501, 1, 65536, -65500, 1, 65538, 65533, 1, 0, 65534, 1, 2, 35, 1, 65536, 36, 1, 65538, 131069, 1, 65536, 131070, 1, 65538, 65571, 1, 65536, 65572, 1, 65538, 196605, 1, 65536, 196606, 1, 65538, 131107, 1, 131072, 131108, 1, 131074, 262141, 1, 65536, 262142, 1, 65538, 196637, 1, 0, 196638, 1, 1, 196639, 1, 1, 196640, 1, 1, 196641, 1, 1, 196642, 1, 2, 327677, 1, 65536, 327678, 1, 65538, 262173, 1, 131072, 262174, 1, 131073, 262175, 1, 131073, 262176, 1, 131073, 262177, 1, 131073, 262178, 1, 131074, 393213, 1, 65536, 393214, 1, 65538, 327715, 1, 0, 327716, 1, 2, 458749, 1, 65536, 458750, 1, 65538, 393238, 1, 0, 393239, 1, 1, 393240, 1, 1, 393241, 1, 1, 393242, 1, 2, 393251, 1, 65536, 393252, 1, 65538, 524285, 1, 65536, 524286, 1, 65538, 458774, 1, 131072, 458775, 1, 131073, 458776, 1, 131073, 458777, 1, 131073, 458778, 1, 131074, 458787, 1, 65536, 458788, 1, 65538, 589821, 1, 65536, 589822, 1, 65538, 524307, 1, 0, 524308, 1, 2, 524323, 1, 65536, 524324, 1, 65538, 655357, 1, 65536, 655358, 1, 65538, 589843, 1, 131072, 589844, 1, 131074, 589859, 1, 65536, 589860, 1, 65538, 720893, 1, 65536, 720894, 1, 65538, 655360, 1, 0, 655361, 1, 1, 655362, 1, 1, 655363, 1, 1, 655364, 1, 1, 655365, 1, 1, 655366, 1, 1, 655367, 1, 1, 655368, 1, 1, 655369, 1, 1, 655370, 1, 1, 655371, 1, 1, 655372, 1, 1, 655373, 1, 1, 655374, 1, 1, 655375, 1, 1, 655376, 1, 2, 655395, 1, 65536, 655396, 1, 65538, 786429, 1, 65536, 786430, 1, 65538, 720896, 1, 131072, 720897, 1, 131073, 720898, 1, 131073, 720899, 1, 131073, 720900, 1, 131073, 720901, 1, 131073, 720902, 1, 131073, 720903, 1, 131073, 720904, 1, 131073, 720905, 1, 131073, 720906, 1, 131073, 720907, 1, 131073, 720908, 1, 131073, 720909, 1, 131073, 720910, 1, 131073, 720911, 1, 131073, 720912, 1, 131074, 720931, 1, 65536, 720932, 1, 65538, 851965, 1, 131072, 851966, 1, 131074, 851967, 1, 0, 786432, 1, 2, 786467, 1, 65536, 786468, 1, 65538, 917503, 1, 131072, 851968, 1, 131074, 852003, 1, 131072, 852004, 1, 131074 )
+
+[node name="Carlitos" parent="." instance=ExtResource( 2 )]
+position = Vector2( 57, 70 )
