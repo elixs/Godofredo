@@ -18,8 +18,9 @@ onready var pivot = $Pivot
 onready var anim_player = $AnimationPlayer
 onready var anim_tree = $AnimationTree
 onready var playback = anim_tree.get("parameters/playback")
-
 onready var bullet_spawn = $Pivot/BulletSpawn
+onready var hud = $CanvasLayer/HUD
+
 
 
 
@@ -29,6 +30,7 @@ func _ready():
 
 
 func _physics_process(delta):
+	# movement
 	
 	velocity = move_and_slide(velocity, Vector2.UP)
 	
@@ -45,9 +47,17 @@ func _physics_process(delta):
 	
 	if is_on_floor() and Input.is_action_just_pressed("jump"):
 		velocity.y = -JUMP_SPEED
+		
+	for i in get_slide_count():
+		var collision = get_slide_collision(i)
+		if collision.collider.collision_layer & 4:
+			var enemy: Node2D = collision.collider
+			var direction = (global_position - enemy.global_position).normalized()
+			velocity = direction * SPEED * 2
+			hud.lives -= 1
 	
 		
-	# Animations
+	# animations
 	
 	if Input.is_action_pressed("move_right") and not Input.is_action_pressed("move_left"):
 		pivot.scale.x = 1
@@ -60,7 +70,7 @@ func _physics_process(delta):
 		return
 	
 	if is_on_floor():
-		if abs(velocity.x) > 10:
+		if abs(move_input) !=0 or abs(velocity.x) > 50:
 			playback.travel("run")
 		else:
 			playback.travel("idle")

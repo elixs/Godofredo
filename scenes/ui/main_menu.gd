@@ -12,7 +12,9 @@ func _ready():
 
 
 func _on_play_pressed():
-	get_tree().change_scene("res://scenes/level_01.tscn")
+	Fade.fade_in()
+	yield(Fade, "fade")
+	get_tree().change_scene("res://scenes/levels/level_01.tscn")
 
 
 func _on_credits_pressed():
