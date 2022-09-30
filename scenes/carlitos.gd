@@ -12,6 +12,7 @@ var GRAVITY = 10
 var SPEED = 200
 var JUMP_SPEED = 200
 var ACCELERATION = 1000
+var KICK_IMPULSE = 10
 
 
 onready var pivot = $Pivot
@@ -32,7 +33,7 @@ func _ready():
 func _physics_process(delta):
 	# movement
 	
-	velocity = move_and_slide(velocity, Vector2.UP)
+	velocity = move_and_slide(velocity, Vector2.UP, false, 4, PI / 4, false)
 	
 	var move_input = Input.get_axis("move_left", "move_right")
 	
@@ -47,7 +48,9 @@ func _physics_process(delta):
 	
 	if is_on_floor() and Input.is_action_just_pressed("jump"):
 		velocity.y = -JUMP_SPEED
-		
+	
+#	var last_collision = get_last_slide_collision()
+	
 	for i in get_slide_count():
 		var collision = get_slide_collision(i)
 		if collision.collider.collision_layer & 4:
@@ -55,6 +58,14 @@ func _physics_process(delta):
 			var direction = (global_position - enemy.global_position).normalized()
 			velocity = direction * SPEED * 2
 			hud.lives -= 1
+		var ball := collision.collider as Ball
+		if ball:
+			if ball.global_position.y < global_position.y + 12:
+				print("kick")
+				ball.apply_central_impulse(
+					(-collision.normal + Vector2.UP * 0.5) * \
+					 KICK_IMPULSE * velocity.length()
+				)
 	
 		
 	# animations
