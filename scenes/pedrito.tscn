@@ -9,6 +9,7 @@ extents = Vector2( 32, 32 )
 [node name="Pedrito" type="KinematicBody2D" groups=["enemy"]]
 collision_layer = 5
 collision_mask = 5
+input_pickable = true
 script = ExtResource( 2 )
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]

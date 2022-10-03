@@ -21,13 +21,14 @@ onready var anim_tree = $AnimationTree
 onready var playback = anim_tree.get("parameters/playback")
 onready var bullet_spawn = $Pivot/BulletSpawn
 onready var hud = $CanvasLayer/HUD
-
-
-
+onready var settings_menu = $CanvasLayer/SettingsMenu
+onready var pause_menu = $CanvasLayer/PauseMenu
 
 
 func _ready():
 	anim_tree.active = true
+	pause_menu.connect("settings_pressed", self, "_on_settings_pressed")
+	settings_menu.connect("close_pressed", self, "_on_close_pressed")
 
 
 func _physics_process(delta):
@@ -98,3 +99,12 @@ func fire():
 	bullet.global_position = bullet_spawn.global_position
 	if pivot.scale.x == -1:
 		bullet.rotation = PI
+
+func _on_settings_pressed():
+	pause_menu.hide()
+	settings_menu.show()
+
+
+func _on_close_pressed():
+	pause_menu.show()
+	settings_menu.hide()
