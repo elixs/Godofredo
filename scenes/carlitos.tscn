@@ -587,7 +587,6 @@ parameters/playback = SubResource( 10 )
 current = true
 process_mode = 0
 limit_left = -32
-smoothing_enabled = true
 smoothing_speed = 1.0
 __meta__ = {
 "_edit_lock_": true

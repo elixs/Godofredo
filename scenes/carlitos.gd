@@ -1,5 +1,9 @@
 extends KinematicBody2D
 
+enum State {
+	MOVE,
+	SWIM
+}
 
 #var Bullet = preload("res://scenes/bullet.tscn")
 export(PackedScene) var Bullet
@@ -11,8 +15,13 @@ var velocity = Vector2()
 var GRAVITY = 10
 var SPEED = 200
 var JUMP_SPEED = 200
+var SWIM_SPEED = 100
 var ACCELERATION = 1000
 var KICK_IMPULSE = 10
+
+var jumps_available = 2
+
+var state = State.MOVE setget _set_state
 
 
 onready var pivot = $Pivot
@@ -31,7 +40,15 @@ func _ready():
 	settings_menu.connect("close_pressed", self, "_on_close_pressed")
 
 
+
 func _physics_process(delta):
+	match state:
+		State.MOVE:
+			_move(delta)
+		State.SWIM:
+			_swim(delta)
+
+func _move(delta):
 	# movement
 	
 	velocity = move_and_slide(velocity, Vector2.UP, false, 4, PI / 4, false)
@@ -47,8 +64,11 @@ func _physics_process(delta):
 	velocity.x = move_toward(velocity.x, move_input * SPEED, ACCELERATION * delta)
 	velocity.y += GRAVITY
 	
-	if is_on_floor() and Input.is_action_just_pressed("jump"):
+	if (is_on_floor() or jumps_available > 0) and Input.is_action_just_pressed("jump"):
 		velocity.y = -JUMP_SPEED
+		jumps_available -= 1
+	elif is_on_floor():
+		jumps_available = 2
 	
 #	var last_collision = get_last_slide_collision()
 	
@@ -93,6 +113,15 @@ func _physics_process(delta):
 			playback.travel("fall")
 	
 
+func _swim(delta):
+	velocity = move_and_slide(velocity, Vector2.UP, false, 4, PI / 4, false)
+	
+	var move_input = Input.get_vector("move_left", "move_right", "move_up", "move_down")
+	
+	velocity = velocity.move_toward(move_input * SWIM_SPEED, ACCELERATION * delta)
+	
+
+
 func fire():
 	var bullet = Bullet.instance()
 	get_parent().add_child(bullet)
@@ -108,3 +137,22 @@ func _on_settings_pressed():
 func _on_close_pressed():
 	pause_menu.show()
 	settings_menu.hide()
+
+
+func _set_state(value):
+	
+	if state == value:
+		return
+
+	match state:
+		State.MOVE:
+			print("I was moving")
+	
+	state = value
+	
+	match state:
+		State.SWIM:
+			print("I'm swimming now")
+
+func swim():
+	self.state = State.SWIM
