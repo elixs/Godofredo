@@ -25,7 +25,7 @@ func _on_settings_pressed():
 	
 
 func _on_credits_pressed():
-	print("· o ·)")
+	get_tree().change_scene("res://scenes/ui/credits.tscn")
 
 
 func _on_exit_pressed():
