@@ -1,4 +1,4 @@
-[gd_scene load_steps=12 format=2]
+[gd_scene load_steps=13 format=2]
 
 [ext_resource path="res://assets/Action Pack - CITY/Assets/Assets_City.png" type="Texture" id=1]
 [ext_resource path="res://scenes/carlitos.tscn" type="PackedScene" id=2]
@@ -8,6 +8,7 @@
 [ext_resource path="res://assets/music/cyberpunk city 2 files/Music/cyberpunk city 2.ogg" type="AudioStream" id=6]
 [ext_resource path="res://icon.png" type="Texture" id=7]
 [ext_resource path="res://scenes/water_trigger.tscn" type="PackedScene" id=8]
+[ext_resource path="res://scenes/bocs.tscn" type="PackedScene" id=9]
 
 [sub_resource type="ConvexPolygonShape2D" id=2]
 points = PoolVector2Array( 0, 0, 16, 0, 16, 16, 0, 16 )
@@ -150,3 +151,6 @@ bus = "Music"
 
 [node name="WaterTrigger" parent="." instance=ExtResource( 8 )]
 position = Vector2( 298, 193 )
+
+[node name="Bocs" parent="." instance=ExtResource( 9 )]
+position = Vector2( 74, 118 )
