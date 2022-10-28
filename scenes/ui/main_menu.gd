@@ -12,6 +12,12 @@ func _ready():
 	settings.connect("pressed", self, "_on_settings_pressed")
 	credits.connect("pressed", self, "_on_credits_pressed")
 	exit.connect("pressed", self, "_on_exit_pressed")
+	
+	play.grab_focus()
+	
+	get_tree().
+	
+	exit.release_focus()
 
 
 func _on_play_pressed():
