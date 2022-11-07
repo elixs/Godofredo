@@ -156,3 +156,11 @@ func _set_state(value):
 
 func swim():
 	self.state = State.SWIM
+
+
+func take_damage(instigator: Node2D):
+	var direction = (global_position - instigator.global_position).normalized()
+	velocity = direction  * SPEED
+	hud.lives -= 1
+	
+	
