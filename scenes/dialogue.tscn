@@ -1,0 +1,28 @@
+[gd_scene load_steps=2 format=2]
+
+[ext_resource path="res://scenes/dialogue.gd" type="Script" id=1]
+
+[node name="Dialogue" type="PanelContainer"]
+margin_left = -33.5
+margin_top = -46.0
+margin_right = 33.5
+margin_bottom = -1.0
+script = ExtResource( 1 )
+__meta__ = {
+"_edit_group_": true
+}
+
+[node name="MarginContainer" type="MarginContainer" parent="."]
+margin_left = 7.0
+margin_top = 7.0
+margin_right = 60.0
+margin_bottom = 38.0
+theme_type_variation = "SmallMaginContainer"
+
+[node name="Label" type="Label" parent="MarginContainer"]
+margin_left = 8.0
+margin_top = 8.0
+margin_right = 45.0
+margin_bottom = 23.0
+size_flags_horizontal = 4
+text = "texto"
